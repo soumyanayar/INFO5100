@@ -43,6 +43,7 @@ Behaviour :
         orderType = this.selectOrderType();
         orderTimings = this.selectOrderTimings();
         order = new Order(items, orderType, orderTimings);
+        this.makePayment();
         return order;
     }
 
