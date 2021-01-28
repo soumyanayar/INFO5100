@@ -1,7 +1,7 @@
-### Problem Statement
+## Problem Statement: 
 Design a Car Rental System.
 
-### User can
+## User can
 1. Log-in To App
 1. Enter the driving license details
 1. Select the pick-up and return locations
@@ -10,13 +10,14 @@ Design a Car Rental System.
 1. Choose the car
 1. Make payment & Book the reservation
 1. Cancel the reservation.
-```
 
+## Pseudocode
+```
 Class : User
 
 Data : username, name, phone, licenseNumber, paymentDetails, reservation
 
-Behaviour :
+Behavior :
 
     loginToApp() {
         App.login(name);    
@@ -63,13 +64,14 @@ Behaviour :
                             returnTimings, 
                             carType);
         selectedCar = selectFrom(cars);
+        this.reservation = App.makeReservation(
+                    this,
+                    selectedCar, 
+                    pickupLocation, 
+                    returnLocation, 
+                    pickupTimings, 
+                    returnTimings);
         this.makePayment();
-        this.reservation = new Reservation(this.username, 
-                                           selectedCar,
-                                           pickupLocation, 
-                                           returnLocation, 
-                                           pickupTimings, 
-                                           returnTimings);
         return reservation;
     }
 
@@ -81,8 +83,92 @@ Behaviour :
         App.pay(this.paymentDetails);
     }
 
-    cancelREservation(){
-        App.cancelReservation(reservation);
+    cancelReservation(){
+        App.cancelReservation(user, reservation);
+    }
+```
+
+```
+Class : App
+Data : listOfCarRentals, listOfReservations
+Behavior : 
+    login(userName, password){
+        isLoggedIn = checkAuthentication(userName, password);
+        return isLoggedIn;
+    }
+
+    getCarTypes(carRental) {
+        return carRental.listOfCarTypes;
+    }
+
+    getPickupLocations() {
+        pickupLocations = extractLocations(listOfCarRentals);
+        return pickupLocations;
+    }
+
+    getReturnLocations() {
+        returnLocations = extractLocations(listOfCarRentals);
+        return returnLocations;
+    }
+
+    getPickupTiminings() {
+        pickupTimings = extractPickupTimings(listOfCarRentals);
+        return pickupTimings;
+    }
+
+    getReturnTimings() {
+        returnTimings = extractReturnTimings(listOfCarRentals);
+        return returnTimings;
+    }
+
+    findCars(pickupLocation, 
+            returnLocation, 
+            pickupTimings, 
+            returnTimings, 
+            carType) {
+        return filterBy(listOfCarRentals, 
+                        pickupLocation, 
+                        returnLocation, 
+                        pickupTimings, 
+                        returnTimings, 
+                        carType)
+    }
+
+    makeReservation(user,
+                    selectedCar, 
+                    pickupLocation, 
+                    returnLocation, 
+                    pickupTimings, 
+                    returnTimings) {
+        reservation = new Reservation(
+        user.username, 
+        selectedCar, 
+        pickupLocation, 
+        returnLocation, 
+        pickupTimings, 
+        returnTimings);
+
+        listOfReservations.add(reservation);
+        return reservation;
+    }
+    
+    pay(paymentDetails) {
+        if (isPaymentDetailValid(paymentDetails)) {
+            processPayment(paymentDetails);
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    
+    cancelReservation(user, reservation) {
+        listOfReservations.remove(reservation);
+        processRefund(user.paymentDetails, reservation);
+    }
+
+    registerCarRental(carRental) {
+        listOfCarRentals.add(carRental);
     }
 ```
 
@@ -90,4 +176,15 @@ Behaviour :
 Class : Reservation
 
 Data : username, car, pickupLocation, returnLocation, pickupTimings, returnTimings
+```
+
+```
+Class : CarRentals
+
+Data: listOfCarTypes, address, DictionaryOfCarTypeToNumberOfCarsAvailable, DictionaryOfCarTypeToPrice, startTime, endTime
+
+Behavior:
+    registerToCarRentalApp() {
+        App.registerCarRental(this);
+    }
 ```
