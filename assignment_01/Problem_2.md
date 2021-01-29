@@ -1,10 +1,14 @@
-### User can
+## Problem Statement: 
+Design a platform for buying tickets of local events.
+
+## User can
 1. Log-in to the App
 1. Select event
 1. Select seats
 1. Review and Make payment
 1. Cancel the Ticket(s)
 
+## Pseudocode
 ```
 Class : User
 Data : name , phone, paymentDetails , booking

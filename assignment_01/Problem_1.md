@@ -1,5 +1,7 @@
+## Problem Statement: 
+Order Pizza from Dominos
 
-### User can
+## User can
 1. Log-in to the app
 1. Select from the menu
 1. Select Pickup/Deliery
@@ -9,6 +11,7 @@
 1. Contact Restaurant/Delivery Person
 1. Cancel the order
 
+## Pseudocode
 ```
 Class : User
 Data : name , userLocation , phone, paymentDetails, order

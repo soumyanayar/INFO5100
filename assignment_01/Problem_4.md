@@ -1,4 +1,7 @@
-### User can
+## Problem Statement: 
+Design a Parking lot.
+
+## User can
 1. Log-in To App
 1. Enter the vehicle License plate details
 1. Enter type/size of the vehicle
@@ -7,6 +10,7 @@
 1. Make payment
 1. Call help desk
 
+## Pseudocode
 ```
 Class :  User
 
@@ -78,7 +82,7 @@ Behaviour :
     }
 
     totalFreeSlotsAvailable(){
-        numberOfFreeSlotsAvailable = totalNumberOfSlots -numberOfOccupiedSlots ; 
+        numberOfFreeSlotsAvailable = totalNumberOfSlots - numberOfOccupiedSlots ; 
         return numberOfFreeSlotsAvailable;
     }
 
