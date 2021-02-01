@@ -9,7 +9,7 @@ class Problem1 {
             sumOfDigits = 0;
             while (number != 0) {
                 // Till the number becomes '0' keep adding its remainder to the sum
-                // and keep deviding the number by 10.
+                // and keep dividing the number by 10.
                 sumOfDigits = sumOfDigits + number % 10;
                 number = number / 10;
             }
