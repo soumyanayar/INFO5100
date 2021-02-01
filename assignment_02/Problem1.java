@@ -23,5 +23,21 @@ class Problem1 {
         int testNumber = 7;
         int sumOfDigits = problem1.addDigits(testNumber);
         System.out.println("The sum of the digits of number : " + testNumber + " is " + sumOfDigits);
+
+        testNumber = 37;
+        sumOfDigits = problem1.addDigits(testNumber);
+        System.out.println("The sum of the digits of number : " + testNumber + " is " + sumOfDigits);
+
+        testNumber = 437;
+        sumOfDigits = problem1.addDigits(testNumber);
+        System.out.println("The sum of the digits of number : " + testNumber + " is " + sumOfDigits);
+
+        testNumber = 54389;
+        sumOfDigits = problem1.addDigits(testNumber);
+        System.out.println("The sum of the digits of number : " + testNumber + " is " + sumOfDigits);
+
+        testNumber = 0;
+        sumOfDigits = problem1.addDigits(testNumber);
+        System.out.println("The sum of the digits of number : " + testNumber + " is " + sumOfDigits);
     }
 }
