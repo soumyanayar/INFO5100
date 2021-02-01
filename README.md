@@ -9,3 +9,4 @@
 
 ### Solutions to Assignment 2
 1. [Problem 1](./assignment_02/Problem1.java)
+1. [Problem 2](./assignment_02/Problem2.java)
