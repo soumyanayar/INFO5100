@@ -21,7 +21,9 @@ public class Problem4 {
     }
 
     public void swap(Employee firstEmployee, Employee secondEmployee) {
-        // Write your code here
+        double tempSalary = firstEmployee.getSalary();
+        firstEmployee.setSalary(secondEmployee.getSalary());
+        secondEmployee.setSalary(tempSalary);
     }
 
     public static void main(String[] args) {
@@ -42,5 +44,11 @@ public class Problem4 {
         problem4.fizzBuzz(employee4);
         problem4.fizzBuzz(employee5);
         problem4.fizzBuzz(employee6);
+
+        System.out.println("Befoer swapping : First Employee salary :" + employee1.getSalary()
+                + " & Second Employee salary : " + employee2.getSalary());
+        problem4.swap(employee1, employee2);
+        System.out.println("After swapping : First Employee salary :" + employee1.getSalary()
+                + " & Second Employee salary : " + employee2.getSalary());
     }
 }
