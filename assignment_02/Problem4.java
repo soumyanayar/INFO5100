@@ -26,6 +26,17 @@ public class Problem4 {
         secondEmployee.setSalary(tempSalary);
     }
 
+    public double socialSecurityTax(Employee employee) {
+        double tax;
+        if (employee.getSalary() < 8900.0) {
+            tax = (employee.getSalary() * 6.2) / 100;
+            return tax;
+        } else {
+            tax = (106800 * 6.2) / 100;
+            return tax;
+        }
+    }
+
     public static void main(String[] args) {
         Problem4 problem4 = new Problem4();
         Employee employee1 = new Employee(1, "Joe", 27, 3478.67);
@@ -50,5 +61,14 @@ public class Problem4 {
         problem4.swap(employee1, employee2);
         System.out.println("After swapping : First Employee salary :" + employee1.getSalary()
                 + " & Second Employee salary : " + employee2.getSalary());
+
+        double socialSecurityTaxCalculator = problem4.socialSecurityTax(employee1);
+        System.out.println(
+                "The tax of the employee " + employee1.getFirstName() + " is : " + socialSecurityTaxCalculator);
+
+        socialSecurityTaxCalculator = problem4.socialSecurityTax(employee5);
+        System.out.println(
+                "The tax of the employee " + employee5.getFirstName() + " is : " + socialSecurityTaxCalculator);
+
     }
 }
