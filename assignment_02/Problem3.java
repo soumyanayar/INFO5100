@@ -1,7 +1,6 @@
 // Write a method that takes a String and character as input and find how many characters are in the String
 
 public class Problem3 {
-
     public int characterCountInString(String s, char c) {
         if (s == null) {
             return 0;
@@ -35,5 +34,4 @@ public class Problem3 {
         System.out.println(
                 "The letter " + target + " in the string: " + testCaseString3 + " repeated " + charCount + " times");
     }
-
 }

@@ -1,4 +1,4 @@
-//Write a method to find the maximum and minimum number in an array of numbers
+// Write a method to find the maximum and minimum number in an array of numbers
 
 public class Problem2 {
 

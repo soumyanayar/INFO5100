@@ -1,4 +1,9 @@
 public class Problem4 {
+    /*
+     * This method should return the sum of salaries of employees having salary
+     * greater than 5000 Note: Employee array is passed, not employee
+     */
+
     public double salaryGreaterThanFiveThousand(Employee[] employees) {
         double sumOfSalariesGreaterThanFiveThousand = 0.0;
         for (Employee employee : employees) {
@@ -10,6 +15,11 @@ public class Problem4 {
         return sumOfSalariesGreaterThanFiveThousand;
     }
 
+    /*
+     * This method should print either "Fizz", "Buzz" or "FizzBuzz" "Fizz" - if id
+     * of employee is divisible by 3 "Buzz" - if id of employee is divisible by 5
+     * "FizzBuzz" - if id of employee is divisible by both 3 and 5
+     */
     public void fizzBuzz(Employee employee) {
         if (employee.getId() % 3 == 0 && employee.getId() % 5 == 0) {
             System.out.println("FizzBuzz");
@@ -20,12 +30,22 @@ public class Problem4 {
         }
     }
 
+    /*
+     * We are given two employee objects. Implement this method to swap salaries of
+     * employees
+     */
     public void swap(Employee firstEmployee, Employee secondEmployee) {
         double tempSalary = firstEmployee.getSalary();
         firstEmployee.setSalary(secondEmployee.getSalary());
         secondEmployee.setSalary(tempSalary);
     }
 
+    /*
+     * Write a method to calculate the Social Security Tax of an employee and print
+     * it. If the salary is less than or equal to 8900, the Social Security Tax is
+     * 6.2% of the salary. If the salary is more than 8900, the Social Security Tax
+     * is 6.2% of 106,800.
+     */
     public double socialSecurityTax(Employee employee) {
         double tax;
         if (employee.getSalary() < 8900.0) {
@@ -37,24 +57,34 @@ public class Problem4 {
         }
     }
 
+    /*
+     * Write a method to calculate an employee's contribution for insurance coverage
+     * and print it. Amount of deduction is computed as follows: If the employee is
+     * under 35, rate is 3% of salary; if the employee is between 35 and
+     * 50(inclusive), rate is 4% of salary; If the employee is between 50 and
+     * 60(exclusive), rate is 5% of salary; If the employee is above 60, rate is 6%
+     * of salary.
+     */
     public static double insuranceCoverage(Employee employee) {
         int employeeAge = employee.getAge();
         double rate;
         if (employeeAge < 35) {
             rate = (3 * employee.getSalary()) / 100;
-            return rate;
-        } else if (employeeAge >= 35 || employeeAge <= 50) {
+        } else if (employeeAge >= 35 && employeeAge <= 50) {
             rate = (4 * employee.getSalary()) / 100;
-            return rate;
-        } else if (employeeAge > 50 || employeeAge < 60) {
+        } else if (employeeAge > 50 && employeeAge < 60) {
             rate = (5 * employee.getSalary()) / 100;
-            return rate;
         } else {
             rate = (6 * employee.getSalary()) / 100;
-            return rate;
         }
+        return rate;
     }
 
+    /*
+     * Write a method to sort three employees' salary from low to high, and then
+     * print their name in order. For example, Alice's salary is 1000, John's salary
+     * is 500, Jenny's salary is 1200, you should print: John Alice Jenny
+     */
     public void sortSalary(Employee e1, Employee e2, Employee e3) {
         Employee employeeWithHighestSalary;
         Employee employeeWithLowestSalary;
@@ -67,6 +97,7 @@ public class Problem4 {
         } else {
             employeeWithHighestSalary = e3;
         }
+
         // Find the employee with lowest salary
         if (e1.getSalary() < e2.getSalary() && e1.getSalary() < e3.getSalary()) {
             employeeWithLowestSalary = e1;
@@ -75,6 +106,7 @@ public class Problem4 {
         } else {
             employeeWithLowestSalary = e3;
         }
+
         // Find the employee with intermediate salary
         if ((employeeWithHighestSalary == e1 && employeeWithLowestSalary == e2)
                 || (employeeWithHighestSalary == e2 && employeeWithLowestSalary == e1)) {
@@ -85,10 +117,20 @@ public class Problem4 {
         } else {
             EmployeeWithIntermediateSalary = e1;
         }
+        // Then finally print all three in order
         System.out.println(employeeWithLowestSalary.getFirstName() + " " + EmployeeWithIntermediateSalary.getFirstName()
                 + " " + employeeWithHighestSalary.getFirstName());
     }
 
+    /***************** Additional question for Extra Credit *****************/
+    /*
+     * Implement this method to convert String[] to employees array. Ex: String[]
+     * employees = new String[]{"1,John,24,7500", "2,Hail,28,7899.90"}; This String
+     * array of length 2 contains 2 employees in form of string, where id = 1
+     * firstName=John age=24 salary=7500 convert each string to employee object.
+     * Hint: Use String methods. Refer :
+     * https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+     */
     public Employee[] createEmployees(String[] employeesStr) {
         Employee[] employees = new Employee[employeesStr.length];
         int i = 0;
