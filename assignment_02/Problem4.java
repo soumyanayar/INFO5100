@@ -55,6 +55,55 @@ public class Problem4 {
         }
     }
 
+    public void sortSalary(Employee e1, Employee e2, Employee e3) {
+        Employee employeeWithHighestSalary;
+        Employee employeeWithLowestSalary;
+        Employee EmployeeWithIntermediateSalary;
+        // First find the employee with highest salary
+        if (e1.getSalary() > e2.getSalary() && e1.getSalary() > e3.getSalary()) {
+            employeeWithHighestSalary = e1;
+        } else if (e2.getSalary() > e1.getSalary() && e2.getSalary() > e3.getSalary()) {
+            employeeWithHighestSalary = e2;
+        } else {
+            employeeWithHighestSalary = e3;
+        }
+        // Find the employee with lowest salary
+        if (e1.getSalary() < e2.getSalary() && e1.getSalary() < e3.getSalary()) {
+            employeeWithLowestSalary = e1;
+        } else if (e2.getSalary() < e1.getSalary() && e2.getSalary() < e3.getSalary()) {
+            employeeWithLowestSalary = e2;
+        } else {
+            employeeWithLowestSalary = e3;
+        }
+        // Find the employee with intermediate salary
+        if ((employeeWithHighestSalary == e1 && employeeWithLowestSalary == e2)
+                || (employeeWithHighestSalary == e2 && employeeWithLowestSalary == e1)) {
+            EmployeeWithIntermediateSalary = e3;
+        } else if ((employeeWithHighestSalary == e1 && employeeWithLowestSalary == e3)
+                || (employeeWithHighestSalary == e3 && employeeWithLowestSalary == e1)) {
+            EmployeeWithIntermediateSalary = e2;
+        } else {
+            EmployeeWithIntermediateSalary = e1;
+        }
+        System.out.println(employeeWithLowestSalary.getFirstName() + " " + EmployeeWithIntermediateSalary.getFirstName()
+                + " " + employeeWithHighestSalary.getFirstName());
+    }
+
+    public Employee[] createEmployees(String[] employeesStr) {
+        Employee[] employees = new Employee[employeesStr.length];
+        int i = 0;
+        for (String employeeStr : employeesStr) {
+            String[] employeeStrSplitted = employeeStr.split(",");
+            int id = Integer.parseInt(employeeStrSplitted[0]);
+            String name = employeeStrSplitted[1];
+            int age = Integer.parseInt(employeeStrSplitted[2]);
+            double salary = Double.parseDouble(employeeStrSplitted[3]);
+            Employee employee = new Employee(id, name, age, salary);
+            employees[i++] = employee;
+        }
+        return employees;
+    }
+
     public static void main(String[] args) {
         Problem4 problem4 = new Problem4();
         Employee employee1 = new Employee(1, "Joe", 27, 3478.67);
@@ -95,5 +144,17 @@ public class Problem4 {
         rate = insuranceCoverage(employee6);
         System.out.println("The insurance rate of the employee is : " + rate);
 
+        problem4.sortSalary(employee3, employee4, employee5);
+
+        String[] employeesString = new String[] { "1,John,24,7500", "2,Hail,28,7899.90" };
+        Employee[] employeesCreatedFromString = problem4.createEmployees(employeesString);
+        System.out.println("Employees created from the employeesString are:");
+        for (Employee employeeCreatedFromString : employeesCreatedFromString) {
+            System.out.println("id: " + employeeCreatedFromString.getId());
+            System.out.println("name: " + employeeCreatedFromString.getFirstName());
+            System.out.println("age: " + employeeCreatedFromString.getAge());
+            System.out.println("salary: " + employeeCreatedFromString.getSalary());
+            System.out.println("**********************************************************");
+        }
     }
 }
