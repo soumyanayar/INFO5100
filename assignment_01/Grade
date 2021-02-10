@@ -1,0 +1,10 @@
+Well Done!
+
+Comments : 
+Something to think about - Usually applications have admins for example,
+In Parking lot system,
+  Class : Administrator  
+  Data : userName,password  
+  Behaviour : login(userName,password), addParking(), changePrice(String vehicleType,float price) and So on,..
+
+Grade : 10/10
