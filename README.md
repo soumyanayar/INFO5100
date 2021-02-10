@@ -12,3 +12,12 @@
 1. [Problem 2](./assignment_02/Problem2.java)
 1. [Problem 3](./assignment_02/Problem3.java)
 1. [Problem 4](./assignment_02/Problem4.java)
+
+### Solutions to Assignment 3
+1. [Problem 1, 2, 3, 4](./assignment_03/Course.java)
+1. [Problem 5](./assignment_03/Problem5.java)
+1. [Problem 6](./assignment_03/Problem6.java)
+1. [Problem 7](./assignment_03/Problem7.java)
+1. [Problem 8](./assignment_03/Problem8.java)
+1. [Problem 9](./assignment_03/Problem9.md)
+1. [Problem 10](./assignment_03/Problem10.md)
