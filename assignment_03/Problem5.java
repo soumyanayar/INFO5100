@@ -1,10 +1,13 @@
 public class Problem5 {
     public String countAndSay(int number) {
-        if (number <= 0) {
-            return "";
+        if (number <= 0 || number > 30) {
+            return "expected 'number' to have value from 1 to 30 only";
         }
         String result = "1";
-        for (int i = 0; i < number; i++) {
+        if (number == 1) {
+            return result;
+        }
+        for (int i = 1; i < number; i++) {
             char c = result.charAt(0);
             StringBuilder temp = new StringBuilder();
             int count = 1;
@@ -27,7 +30,7 @@ public class Problem5 {
 
     public static void main(String[] args) {
         Problem5 problem5 = new Problem5();
-        String result = problem5.countAndSay(5);
+        String result = problem5.countAndSay(32);
         System.out.println(result);
     }
 }

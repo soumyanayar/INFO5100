@@ -1,0 +1,1 @@
+### What is Java Garbage Collection? How It Works?. What is finalize method in Java ? When does an Object becomes eligible for Garbage collection in Java?
