@@ -30,7 +30,7 @@ public class Problem5 {
 
     public static void main(String[] args) {
         Problem5 problem5 = new Problem5();
-        String result = problem5.countAndSay(32);
+        String result = problem5.countAndSay(6);
         System.out.println(result);
     }
 }
