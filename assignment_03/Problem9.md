@@ -2,8 +2,8 @@
 
 **Encapsulation** in Java is a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit. In encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class. Therefore, it is also known as **data hiding**.
 To achieve encapsulation in Java:
-- Declare the variables of a class as private.
-- Provide public setter and getter methods to modify and view the variables values.
+- the variables of a class need to be declared private
+- the public setter and getter methods to modify and view the variable values need to be provided.
 ```java
 import java.util.Date;
 public class Student {
@@ -74,8 +74,3 @@ public void setHeightInCM(int heightInCM) {
     }
 }
 ```
-Also, Even though the methods don't really add new functionality, the cool thing is that you can change your mind later. you can come back and make a method safer, faster, better. 
-Information hiding is important for many reasons, most of which stem from the fact that it decouples the modules that compromise a system, allowing them to be developed, tested, optimized, used, understood, and modified in isolation.
-### Final Rule of thumb
-1. Mark your instance variables private
-2. Provide public getters and setters for access control
