@@ -21,3 +21,7 @@
 1. [Problem 8](./assignment_03/Problem8.java)
 1. [Problem 9](./assignment_03/Problem9.md)
 1. [Problem 10](./assignment_03/Problem10.md)
+
+### Solutions to Assignment 4
+1. [Problem 1](./assignment_04/ShapeTester.java)
+1. [Problem 4](./assignment_04/Assignment4Problem4)
