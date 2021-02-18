@@ -1,4 +1,4 @@
-public class Assignment4Problem4 {
+public class Problem4 {
     public static int[] getPermutationPatternWithCondition(String input) {
         int iCounter = 0;
         int dCounter = input.length();
@@ -17,21 +17,21 @@ public class Assignment4Problem4 {
 
     public static void main(String[] args) {
         String input1 = "IDID";
-        int[] result1 = Assignment4Problem4.getPermutationPatternWithCondition(input1);
+        int[] result1 = Problem4.getPermutationPatternWithCondition(input1);
         for (int val : result1) {
             System.out.print(val + " ");
         }
         System.out.println();
 
         String input2 = "III";
-        int[] result2 = Assignment4Problem4.getPermutationPatternWithCondition(input2);
+        int[] result2 = Problem4.getPermutationPatternWithCondition(input2);
         for (int val : result2) {
             System.out.print(val + " ");
         }
         System.out.println();
 
         String input3 = "DDI";
-        int[] result3 = Assignment4Problem4.getPermutationPatternWithCondition(input3);
+        int[] result3 = Problem4.getPermutationPatternWithCondition(input3);
         for (int val : result3) {
             System.out.print(val + " ");
         }
