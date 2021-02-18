@@ -24,4 +24,5 @@
 
 ### Solutions to Assignment 4
 1. [Problem 1](./assignment_04/ShapeTester.java)
-1. [Problem 4](./assignment_04/Assignment4Problem4.java)
+1. [Problem 2](./assignment_04/Problem2.java)
+1. [Problem 4](./assignment_04/Problem4.java)
