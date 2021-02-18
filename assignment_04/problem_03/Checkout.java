@@ -36,7 +36,7 @@ public class Checkout {
     }
 
     public String toString() {
-        String str = "     " + DessertShop.storeName + "\n     ----------------------\n";
+        String output = "     " + DessertShop.storeName + "\n     ----------------------\n";
 
         int leftGap = 24;
         int rightGap = 12;
@@ -57,29 +57,30 @@ public class Checkout {
                 displayCost = displayCost.substring(0, DessertShop.maxWidthToDisplayCost);
             }
             if (item instanceof Sundae) {
-                str += "\n" + String.format("%-" + leftGap + "s", item.getName().split("\\n")[0]) + "\n"
+                output += "\n" + String.format("%-" + leftGap + "s", item.getName().split("\\n")[0]) + "\n"
                         + String.format("%-" + leftGap + "s", item.getName().split("\\n")[1])
                         + String.format("%" + rightGap + "s", displayCost);
             } else if (item instanceof IceCream) {
-                str += "\n" + String.format("%-" + leftGap + "s", item.getName())
+                output += "\n" + String.format("%-" + leftGap + "s", item.getName())
                         + String.format("%" + rightGap + "s", displayCost);
             } else if (item instanceof Cookie) {
-                str += "\n"
+                output += "\n"
                         + String.format("%-" + leftGap + "s", ((Cookie) item).getNumber() + " @ "
                                 + DessertShop.cents2dollarsAndCentsmethod(((Cookie) item).getPricePerDozen()) + " /dz.")
                         + "\n" + String.format("%-" + leftGap + "s", item.getName())
                         + String.format("%" + rightGap + "s", displayCost);
             } else {
-                str += "\n"
+                output += "\n"
                         + String.format("%-" + leftGap + "s", ((Candy) item).getWeight() + " lbs. @ "
                                 + DessertShop.cents2dollarsAndCentsmethod(((Candy) item).getPricePerPound()) + " /lb.")
                         + "\n" + String.format("%-" + leftGap + "s", item.getName())
                         + String.format("%" + rightGap + "s", displayCost);
             }
         }
-        str += "\n\n" + String.format("%-" + leftGap + "s", "Tax") + String.format("%" + rightGap + "s", taxToDisplay)
-                + "\n" + String.format("%-" + leftGap + "s", "Total Cost")
+        output += "\n\n" + String.format("%-" + leftGap + "s", "Tax")
+                + String.format("%" + rightGap + "s", taxToDisplay) + "\n"
+                + String.format("%-" + leftGap + "s", "Total Cost")
                 + String.format("%" + rightGap + "s", displayTotalCost) + "\n\n";
-        return str;
+        return output;
     }
 }
