@@ -27,3 +27,6 @@
 1. [Problem 2](./assignment_04/Problem2.java)
 1. [Problem 3](./assignment_04/problem_03/Checkout.java)
 1. [Problem 4](./assignment_04/Problem4.java)
+
+### Solutions to Assignment 5
+1. [Problem 2](./assignment_05/problem_02/Drive.java)
