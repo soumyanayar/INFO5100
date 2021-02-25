@@ -1,4 +1,4 @@
-public class problem_04 {
+public class Assingment5Problem4 {
 
     public int getClosestOfTarget(int[] array, int target) {
         int length = array.length;
@@ -30,7 +30,7 @@ public class problem_04 {
     }
 
     public static void main(String[] args) {
-        problem_04 obj = new problem_04();
+        Assingment5Problem4 obj = new Assingment5Problem4();
         int[] array1 = { 1, 3, 7, 8, 12, 23, 25 };
         int target1 = 11;
         int result = obj.getClosestOfTarget(array1, target1);
