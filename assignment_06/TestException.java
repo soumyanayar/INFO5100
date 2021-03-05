@@ -2,10 +2,12 @@
     Explanation: 
 
     What is the problem with below program?
-    Ans: There are two Exceptions in the same catch block. That is not supported in java.
+    Ans: This program will give compilation error with the message as "The exception FileNotFoundException is already caught by the alternative IOException". 
+    This is due to FileNotFoundException is a child class of IOException
 
     Recommend a solution:
-    Ans: Move the exceptions into separate exception blocks. The below code is the correct version of the problem statement.
+    Ans: Move the exceptions into separate exception blocks. catch the more specific FileNotFoundException first and then try to catch for IOException. 
+    The below code is the correct version of the problem statement.
 */
 
 import java.io.FileNotFoundException;
