@@ -40,3 +40,11 @@
 1. [Problem 3](./assignment_06/TestException.java)
 1. [Problem 4](./assignment_06/ExceptionHandling.java)
 1. [Problem 5](./assignment_06/Problem_05.md)
+
+### Solutions to Assignment 7
+1. [Problem 1](./assignment_07/Problem_01/Atm.java)
+1. [Problem 2](./assignment_07/Problem_02.md)
+1. [Problem 3](./assignment_07/Problem_03.java)
+1. [Problem 4](./assignment_07/Problem_04.java)
+1. [Problem 5](./assignment_07/Problem_05.java)
+
