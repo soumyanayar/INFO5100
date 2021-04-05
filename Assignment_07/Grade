@@ -1,0 +1,6 @@
+Well Done!
+
+Comments : While coding, once you have thought about general case (i.e, a scenario that is most likely to happen) Think about Edge cases. 
+           For instance, in ATM program, one should not be able to deposit or withdraw any negative amount.
+           
+Grade :  10/10
